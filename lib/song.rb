@@ -1,7 +1,7 @@
 #module Concerns::Findable
  require "pry"
 class Song
-  extend Concerns::Findable
+  #extend Concerns::Findable
   attr_accessor :name
   attr_reader :artist, :genre
 
@@ -49,11 +49,11 @@ class Song
   end
 
   def self.find_or_create_by_name(name)
-    if !find_by_name(name)
-      self.create(name)
-    else
-      self.find_by_name(name)
-    end
+    find_by_name(name) || create(name)
+    #if !find_by_name(name)
+      #self.create(name)
+    #else
+      ##end
     end
 
     def self.create_from_filename(name)
