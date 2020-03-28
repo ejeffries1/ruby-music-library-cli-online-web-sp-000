@@ -49,11 +49,11 @@ class Song
   end
 
   def self.find_or_create_by_name(name)
-    find_by_name(name) || create(name)
-    #if !find_by_name(name)
-      #self.create(name)
-    #else
-      ##end
+    #find_by_name(name) || create(name)
+    if !find_by_name(name)
+      self.create(name)
+    else
+      end
     end
 
     def self.create_from_filename(name)
