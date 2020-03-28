@@ -1,8 +1,9 @@
 #module Concerns::Findable
  require "pry"
 class Song
-  attr_accessor :genre, :song, :name
-  attr_reader :artist
+  #extend Concerns::Findable
+  attr_accessor :name
+  attr_reader :artist, :genre
 
   @@all = []
   def initialize(name, artist = nil, genre = nil)
@@ -21,9 +22,9 @@ class Song
       genre.songs << self unless genre.songs.include?(self)
   end
 
-  def add_song
-    @songs
-  end
+  #def add_song
+    #@songs
+  #end
 
   def self.all
     @@all
@@ -51,7 +52,7 @@ class Song
     if !find_by_name(name)
       self.create(name)
     else
-      find_by_name(name)
+      self.find_by_name(name)
     end
     end
 
