@@ -19,7 +19,7 @@ class Genre
   end
 
   def save
-    @@all << self
+    self.all << self
   end
 
   def self.create(name)
