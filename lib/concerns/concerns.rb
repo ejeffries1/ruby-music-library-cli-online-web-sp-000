@@ -1,9 +1,9 @@
 module Concerns::Findable
 
-  class MusicImporter
-    def initialize(filename)
-    end
-  end
+  #class MusicImporter
+    #def initialize(filename)
+    #end
+  #end
 
   def find_by_name(name)
     self.all.find {|song| song.name == name}
